@@ -1,0 +1,172 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa; /* Light cyan background */
+    color: #333;
+}
+
+/* App Container */
+.App {
+    max-width: 1200px; /* Increased max width for larger screens */
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for the app */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #00796b; /* Teal color for the title */
+    margin-bottom: 20px;
+    font-size: 2.5em; /* Slightly larger for impact */
+}
+
+/* Weather Dashboard */
+.weather-dashboard {
+    margin-top: 20px;
+}
+/* toggle btn */
+/* Unit Toggle Styles */
+/* Parent container for the forecast items */
+.forecast-container {
+    position: relative; /* Make this the reference point for absolute positioning */
+    padding-top: 60px; /* Add padding to prevent overlap with the toggle button */
+}
+
+
+
+.toggle-btn {
+    padding: 10px 15px; /* Padding for the button */
+    margin-top: 0px;
+    background-color: #00796b; /* Teal background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.weather-container {
+    position: relative; /* Create a positioning context for absolute children */
+}
+
+.unit-toggle {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1000; /* Make sure it appears above other elements */
+}
+
+.toggle-btn {
+    padding: 10px 15px; /* Padding for the button */
+    margin-left: 10px;
+    margin-top:10px;
+    background-color: #00796b; /* Teal background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Button hover and active styles */
+.toggle-btn:hover {
+    background-color: #004d40; /* Darker teal on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.toggle-btn:active {
+    background-color: #00332b; /* Slightly darker on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
+
+
+/* Error and Loading Messages */
+.error {
+    color: #d32f2f; /* Red color for error messages */
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+}
+
+
+/* Favorites Section */
+.favorites {
+    margin-top: 20px;
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #e0f2f1; /* Light teal for favorite items */
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.favorite-item button {
+    background: transparent;
+    border: none;
+    color: #d32f2f; /* Red color for remove button */
+    cursor: pointer;
+    font-weight: bold;
+    padding: 4px 8px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.favorite-item button:hover {
+    color: #b71c1c; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px; /* Icon size */
+    color: red; /* Icon color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .forecast-item {
+        flex: 1 1 100%; /* Stack items on smaller screens */
+    }
+
+    .favorites {
+        margin: 10px; /* Reduce margin */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust heading size */
+    }
+}
+
+/* Add padding and spacing to improve overall aesthetics */
+body {
+    padding: 10px; /* General padding for body */
+}
+
+.App {
+    padding: 30px; /* Increased padding for app */
+}
