@@ -4,10 +4,10 @@ import './Favourites.css';
 
 const Favorites = ({ favorites, setFavorites, setCurrentCity }) => {
     const addFavorite = async (city) => {
-        if (!city) return; // Prevent adding empty city
+        if (!city) return; 
         try {
             const response = await axios.post('http://localhost:3000/favorites', { city });
-            // If the response has no data or expected keys, log it for debugging
+           
             if (!response.data || !response.data.city) {
                 console.error("Unexpected response:", response);
             }

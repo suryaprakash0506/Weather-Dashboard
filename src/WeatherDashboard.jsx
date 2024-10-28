@@ -1,4 +1,3 @@
-// WeatherDashboard.js
 import React, { useState, useEffect } from 'react';
 import SearchCity from './components/SearchCity';
 import WeatherDisplay from './components/WeatherDisplay';
@@ -9,20 +8,19 @@ const WeatherDashboard = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [favorites, setFavorites] = useState([]);
     const [currentCity, setCurrentCity] = useState(localStorage.getItem('lastCity') || 'New York');
-    const [units, setUnits] = useState('metric'); // 'metric' for Celsius, 'imperial' for Fahrenheit
+    const [units, setUnits] = useState('metric'); 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const apiKey = '5d2351112d3986fb97a3c772fc3ba6ca'; // Hardcoded OpenWeatherMap API Key
+    const apiKey = '5d2351112d3986fb97a3c772fc3ba6ca'; 
 
     useEffect(() => {
         if (currentCity) {
-            fetchCityCoordinates(currentCity); // Fetch weather data based on city
+            fetchCityCoordinates(currentCity); 
         }
         fetchFavorites();
     }, [currentCity, units]);
 
-    // Fetch city coordinates based on city name
     const fetchCityCoordinates = async (city) => {
         setLoading(true);
         setError(null);
@@ -32,7 +30,7 @@ const WeatherDashboard = () => {
             const locationResponse = await axios.get(locationUrl);
             const { lat, lon } = locationResponse.data.coord;
 
-            // Fetch weather data based on coordinates
+        
             fetchWeatherData(lat, lon);
         } catch (error) {
             console.error('Error fetching city coordinates:', error);
@@ -78,7 +76,7 @@ const WeatherDashboard = () => {
                       className="toggle-btn"
                       onClick={() => setUnits(units === 'metric' ? 'imperial' : 'metric')}
                   >
-                      Toggle to {units === 'metric' ? 'Fahrenheit' : 'Celsius'}
+                      Convert to {units === 'metric' ? 'Fahrenheit' : 'Celsius'}
                   </button>
               </div>
               <WeatherDisplay weatherData={weatherData} units={units} />
